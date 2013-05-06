@@ -1,0 +1,59 @@
+﻿@model BeerApp.Domain.Entry
+
+@{
+    ViewBag.Title = "Entry";
+}
+
+<h2>Entry</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Entry</legend>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Beer.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Beer.Name)
+            @Html.ValidationMessageFor(model => model.Beer.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Score)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Score)
+            @Html.ValidationMessageFor(model => model.Score)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Comment)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Comment)
+            @Html.ValidationMessageFor(model => model.Comment)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date)
+            @Html.ValidationMessageFor(model => model.Date)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
