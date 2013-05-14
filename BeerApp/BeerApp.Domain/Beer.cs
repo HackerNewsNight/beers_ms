@@ -57,5 +57,8 @@ namespace BeerApp.Domain
     {
         IQueryable<Beer> Beers { get; }
         IQueryable<Entry> Entries { get; }
+        IQueryable<Category> Categories { get; }
+        IQueryable<Brewer> Brewers { get; }
+        IQueryable<Style> Styles { get; }
     }
 }
