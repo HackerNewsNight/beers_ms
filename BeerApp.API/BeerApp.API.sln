@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerApp.API.Tests", "BeerAp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D017C903-2DDF-42FD-BD10-04E8F8EE0849}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerAp.Models", "BeerApp.Models\BeerAp.Models.csproj", "{4665244C-541F-42B2-925C-A3F8251923E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerApp.Models", "BeerApp.Models\BeerApp.Models.csproj", "{4665244C-541F-42B2-925C-A3F8251923E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerApp.Data", "BeerApp.Data\BeerApp.Data.csproj", "{FD62D3F7-0065-4D1A-9FF5-832216B13F25}"
 EndProject

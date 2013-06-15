@@ -11,7 +11,7 @@ namespace BeerApp.Data
 {
     public class DataContext : DbContext
     {
-        public DataContext() : base(DataContext.ConnectionStringName) { }
+        public DataContext() : base(ConnectionStringName) { }
 
         public DbSet<Beer> Beers { get; set;  }
 

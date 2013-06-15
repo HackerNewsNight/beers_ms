@@ -55,9 +55,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BeerApp.Models\BeerAp.Models.csproj">
+    <ProjectReference Include="..\BeerApp.Models\BeerApp.Models.csproj">
       <Project>{4665244c-541f-42b2-925c-a3f8251923e4}</Project>
-      <Name>BeerAp.Models</Name>
+      <Name>BeerApp.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
