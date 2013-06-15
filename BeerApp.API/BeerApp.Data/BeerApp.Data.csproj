@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\BeerConfiguration.cs" />
+    <Compile Include="Configuration\BrewerConfiguration.cs" />
+    <Compile Include="Configuration\CategoryConfiguration.cs" />
+    <Compile Include="Configuration\ContactDetailsConfiguration.cs" />
+    <Compile Include="Configuration\EntryConfiguration.cs" />
+    <Compile Include="Configuration\StyleConfiguration.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
