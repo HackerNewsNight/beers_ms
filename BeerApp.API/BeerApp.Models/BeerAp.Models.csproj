@@ -7,8 +7,8 @@
     <ProjectGuid>{4665244C-541F-42B2-925C-A3F8251923E4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BeerApp.Domain</RootNamespace>
-    <AssemblyName>BeerApp.Domain</AssemblyName>
+    <RootNamespace>BeerApp.Models</RootNamespace>
+    <AssemblyName>BeerApp.Models</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Beer.cs" />
+    <Compile Include="Brewer.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="ContactDetails.cs" />
+    <Compile Include="Entry.cs" />
+    <Compile Include="IBeerDataSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Style.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

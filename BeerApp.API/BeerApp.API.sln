@@ -5,9 +5,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerApp.API", "BeerApp.API\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerApp.API.Tests", "BeerApp.API.Tests\BeerApp.API.Tests.csproj", "{BE1A9DC1-B9E8-4E2D-B0BA-34887E6F6889}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerApp.Domain", "BeerApp.Domain\BeerApp.Domain.csproj", "{4665244C-541F-42B2-925C-A3F8251923E4}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D017C903-2DDF-42FD-BD10-04E8F8EE0849}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerAp.Models", "BeerApp.Models\BeerAp.Models.csproj", "{4665244C-541F-42B2-925C-A3F8251923E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

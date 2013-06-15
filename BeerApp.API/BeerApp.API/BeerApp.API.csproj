@@ -261,9 +261,9 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BeerApp.Domain\BeerApp.Domain.csproj">
+    <ProjectReference Include="..\BeerApp.Models\BeerAp.Models.csproj">
       <Project>{4665244c-541f-42b2-925c-a3f8251923e4}</Project>
-      <Name>BeerApp.Domain</Name>
+      <Name>BeerAp.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

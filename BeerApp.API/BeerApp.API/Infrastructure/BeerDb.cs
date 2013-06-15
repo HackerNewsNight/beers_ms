@@ -1,8 +1,8 @@
 ﻿using System.Data.Entity;
 using System.Linq;
-using BeerApp.Domain;
+using BeerApp.Models;
 
-namespace BeerApp.Infrastructure
+namespace BeerApp.API.Infrastructure
 {
     public class BeerDb : DbContext, IBeerDataSource
     {

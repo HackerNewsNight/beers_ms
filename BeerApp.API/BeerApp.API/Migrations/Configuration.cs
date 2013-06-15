@@ -4,7 +4,8 @@ using System.Linq;
 using System.Reflection;
 using System.Xml.Linq;
 using System.Data.Entity.Migrations;
-using BeerApp.Domain;
+using BeerApp.API.Infrastructure;
+using BeerApp.Models;
 
 namespace BeerApp.API.Migrations
 {
@@ -35,14 +36,14 @@ namespace BeerApp.API.Migrations
         }
     }
 
-    internal sealed class Configuration : DbMigrationsConfiguration<BeerApp.Infrastructure.BeerDb>
+    internal sealed class Configuration : DbMigrationsConfiguration<BeerDb>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(BeerApp.Infrastructure.BeerDb context)
+        protected override void Seed(BeerDb context)
         {
             var resourceName = "BeerApp.API.Migrations.OpenDB.beers_all.xml";
             var assembly = Assembly.GetExecutingAssembly();

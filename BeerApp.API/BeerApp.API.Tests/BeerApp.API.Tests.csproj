@@ -116,10 +116,6 @@
       <Project>{8ED6DFDA-BCFB-4968-85B0-E3677DE5ABA8}</Project>
       <Name>BeerApp.API</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BeerApp.Domain\BeerApp.Domain.csproj">
-      <Project>{4665244C-541F-42B2-925C-A3F8251923E4}</Project>
-      <Name>BeerApp.Domain</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
