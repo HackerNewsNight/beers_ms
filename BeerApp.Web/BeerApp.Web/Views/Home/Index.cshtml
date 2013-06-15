@@ -1,6 +1,18 @@
 ﻿@{
-    ViewBag.Title = "Beer Diary";
+    ViewBag.Title = "Beer List";
 }
-    <h1>@ViewBag.Title.</h1>
-
-
+<h1>@ViewBag.Title</h1>
+<div ng-controller="HomeController">
+    <table class="table table-hover table-condensed">
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="beer in beers">
+            <tr>
+                <td>{{beer.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
