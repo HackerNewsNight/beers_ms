@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,42 @@ namespace BeerApp.Data
 {
     public class DataContext : DbContext
     {
+        static DataContext()
+        {
+            Database.SetInitializer(new CustomDatabaseInitialiser());
+        }
+
         public DataContext() : base(ConnectionStringName) { }
 
-        public DbSet<Beer> Beers { get; set;  }
+        public DbSet<Beer> Beers { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Style> Styles { get; set; }
+        public DbSet<Brewer> Breweries { get; set; }
+
+        private void ApplyRules()
+        {
+            // Approach via @julielerman
+            foreach (var entry in this.ChangeTracker.Entries()
+                .Where(e =>e.Entity is IAuditInfo && 
+                    (e.State == EntityState.Added) || 
+                    (e.State == EntityState.Modified)))
+            {
+                var e = (IAuditInfo) entry.Entity;
+
+                if (entry.State == EntityState.Added)
+                {
+                    e.CreatedOn = DateTime.Now; 
+                }
+
+                e.ModifiedOn = DateTime.Now; 
+            }
+        }
+
+        public override int SaveChanges()
+        {
+            this.ApplyRules();
+            return base.SaveChanges();
+        }
 
         public static string ConnectionStringName 
         { 

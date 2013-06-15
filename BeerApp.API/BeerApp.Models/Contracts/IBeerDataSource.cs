@@ -1,4 +1,5 @@
 using System.Linq;
+using BeerApp.Models;
 
 namespace BeerApp.Models
 {

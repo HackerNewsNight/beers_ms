@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerApp.Models", "BeerApp.M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerApp.Data", "BeerApp.Data\BeerApp.Data.csproj", "{FD62D3F7-0065-4D1A-9FF5-832216B13F25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerApp.ConsoleApp", "BeerApp.ConsoleApp\BeerApp.ConsoleApp.csproj", "{D976909D-A122-49F9-9557-D1EE4759C509}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FD62D3F7-0065-4D1A-9FF5-832216B13F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD62D3F7-0065-4D1A-9FF5-832216B13F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD62D3F7-0065-4D1A-9FF5-832216B13F25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D976909D-A122-49F9-9557-D1EE4759C509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D976909D-A122-49F9-9557-D1EE4759C509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D976909D-A122-49F9-9557-D1EE4759C509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D976909D-A122-49F9-9557-D1EE4759C509}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

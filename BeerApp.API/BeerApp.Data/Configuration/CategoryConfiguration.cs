@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using BeerApp.Models; 
+using BeerApp.Models;
 
 namespace BeerApp.Data.Configuration
 {
@@ -8,7 +8,6 @@ namespace BeerApp.Data.Configuration
         public CategoryConfiguration()
         {
             Property(p => p.Name).IsRequired().HasMaxLength(100);
-            Property(p => p.Modified).IsRequired().HasColumnType("datetime");
         }
     }
 }

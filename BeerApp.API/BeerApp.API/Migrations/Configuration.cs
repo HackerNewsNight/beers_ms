@@ -55,7 +55,6 @@ namespace BeerApp.API.Migrations
                                  {
                                      Id = (int) x.ColumnValue("id"),
                                      Name = (string) x.ColumnValue("cat_name"),
-                                     Modified = (DateTime) x.ColumnValue("last_mod")
                                  }).ToArray();
             context.Categories.AddOrUpdate(x => x.Id, categories);
             context.SaveChanges();
