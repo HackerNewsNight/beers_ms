@@ -60,6 +60,9 @@
     <Reference Include="DotNetOpenAuth.OpenId.RelyingParty">
       <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.2.2.13055\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
     </Reference>
+    <Reference Include="LINQtoCSV">
+      <HintPath>..\packages\LinqToCsv.1.2.0.0\lib\LINQtoCSV.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -242,12 +245,10 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Migrations\OpenDB\beers.csv" />
-    <Content Include="Migrations\OpenDB\breweries.csv" />
-    <Content Include="Migrations\OpenDB\breweries_geocode.csv" />
-    <Content Include="Migrations\OpenDB\categories.csv" />
-    <Content Include="Migrations\OpenDB\styles.csv" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Migrations\OpenDB\beers_all.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Scripts\angular-bootstrap-prettify.js" />
     <Content Include="Scripts\angular-bootstrap-prettify.min.js" />
     <Content Include="Scripts\angular-bootstrap.js" />

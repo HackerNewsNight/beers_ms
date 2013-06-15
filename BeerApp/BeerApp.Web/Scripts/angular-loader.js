@@ -29,7 +29,7 @@ function setupModuleLoader(window) {
      * @name angular.module
      * @description
      *
-     * The `angular.module` is a global place for creating and registering Angular modules. All
+     * The 'angular.module' is a global place for creating and registering Angular modules. All
      * modules (angular core or 3rd party) that should be available to an application must be
      * registered using this mechanism.
      *

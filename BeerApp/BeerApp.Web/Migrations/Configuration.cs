@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Xml.Linq;
 using BeerApp.Domain;
 using BeerApp.Web.Infrastructure;
 
@@ -21,13 +22,23 @@ namespace BeerApp.Web.Migrations
         {
             /* todo: dmanners - call in the data from the csv files. */
             //  This method will be called after migrating to the latest version.
-            
-            var categories = PopulateCategories(context);
-            var styles = PopulateStyles(context, categories);
-            var brewers = PopulateBrewers(context);
-            var beers = OpenDbBeers(context, styles, brewers);
-            
 
+            //var xmlDoc = XDocument.Load(@"d:\temp\beers_all.xml");
+            //var q = from data in xmlDoc.Descendants("table_data")
+            //        let attribute = data.Attribute("name")
+            //        where attribute != null && attribute.Value == "beers"
+            //        select data; 
+            
+            //IEnumerable<XElement> beers =
+            //    from c in xmlDoc.Elements("table_data")
+            //    where (string)c.Attribute("name") == "beers"
+            //    select c;
+            
+            //var categories = PopulateCategories(context);
+            //var styles = PopulateStyles(context, categories);
+            //var brewers = PopulateBrewers(context);
+            //var beers = OpenDbBeers(context, styles, brewers);
+            
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //
@@ -66,8 +77,9 @@ namespace BeerApp.Web.Migrations
                                                            Name = x.name,
                                                            Style = styles.FirstOrDefault(style => style.Id == x.id),
                                                            Brewer = brewers.FirstOrDefault(brewer => brewer.Id == x.id)
-                                                       });
-            context.Beers.AddOrUpdate(x => beers);
+                                                       }).ToArray();
+            context.Beers.AddOrUpdate(x => x.Id, beers);
+            context.SaveChanges();
             return openDbBeers;
         }
 
@@ -77,6 +89,7 @@ namespace BeerApp.Web.Migrations
             // id	name	address1	address2	city	state	code	country	phone	website	filepath	descript	last_mod
             var breweries = (from line in openDbBrewer
                              let data = line.Split(',')
+                             where data.Count()> 8 && !string.IsNullOrEmpty(data[0])
                              select new
                                         {
                                             id = Int32.Parse(data[0]),
@@ -90,8 +103,7 @@ namespace BeerApp.Web.Migrations
                                             phone = data[8],
                                             website = data[9],
                                             filepath = data[10],
-                                            descript = data[11],
-                                            last_mod = data[12]
+                                            descript = data[11]
                                         }).Select(x => new Brewer()
                                                            {
                                                                Id = x.id,
@@ -106,8 +118,9 @@ namespace BeerApp.Web.Migrations
                                                                                  State = x.state,
                                                                                  Website = x.website
                                                                              }
-                                                           });
-            context.Brewers.AddOrUpdate(x => breweries);
+                                                           }).ToArray();
+            context.Brewers.AddOrUpdate(x => x.Id, breweries);
+            context.SaveChanges(); 
             return breweries; 
         }
 
@@ -130,8 +143,9 @@ namespace BeerApp.Web.Migrations
                                                  Id = x.id,
                                                  Name = x.style_name,
                                                  Category = categories.FirstOrDefault(cat => cat.Id == x.cat_id)
-                                             });
-            context.Styles.AddOrUpdate(x => styles);
+                                             }).ToArray();
+            context.Styles.AddOrUpdate(x => x.Id, styles);
+            context.SaveChanges();
             return styles;
         }
 
@@ -147,12 +161,13 @@ namespace BeerApp.Web.Migrations
                                              cat_name = data[1],
                                              last_mod = DateTime.Parse(data[2])
                                          }).Select(x => new Category()
-                                                            {
+                                                            { 
                                                                 Id = x.id,
                                                                 Name = x.cat_name,
                                                                 Modified = x.last_mod
-                                                            }).ToList();
-            context.Categories.AddOrUpdate(x => categories);
+                                                            }).ToArray();
+            context.Categories.AddOrUpdate(x => x.Id, categories);
+            context.SaveChanges(); 
             return categories;
         }
     }

@@ -156,7 +156,7 @@ angular.module('ngCookies', ['ng']).
          * @description
          * Sets a value for given cookie key
          *
-         * @param {string} key Id for the `value`.
+         * @param {string} key Id for the 'value'.
          * @param {Object} value Value to be stored.
          */
         put: function(key, value) {

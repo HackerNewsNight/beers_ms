@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="DB.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -103,6 +104,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BeerApp.Domain\BeerApp.Domain.csproj">
+      <Project>{4665244C-541F-42B2-925C-A3F8251923E4}</Project>
+      <Name>BeerApp.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BeerApp.Web\BeerApp.Web.csproj">
       <Project>{708FD2F3-296F-4E69-BBA2-CF4A1AE5641B}</Project>
       <Name>BeerApp.Web</Name>

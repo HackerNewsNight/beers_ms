@@ -405,7 +405,7 @@ angular.module('ngSanitize', []).value('$sanitize', $sanitize);
  * @name ngSanitize.directive:ngBindHtml
  *
  * @description
- * Creates a binding that will sanitize the result of evaluating the `expression` with the
+ * Creates a binding that will sanitize the result of evaluating the 'expression' with the
  * {@link ngSanitize.$sanitize $sanitize} service and innerHTML the result into the current element.
  *
  * See {@link ngSanitize.$sanitize $sanitize} docs for examples.

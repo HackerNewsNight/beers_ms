@@ -191,7 +191,7 @@ angular.mock.$Browser.prototype = {
  *
  * @description
  * Configures the mock implementation of {@link ng.$exceptionHandler} to rethrow or to log errors passed
- * into the `$exceptionHandler`.
+ * into the '$exceptionHandler'.
  */
 
 /**
@@ -239,13 +239,13 @@ angular.mock.$ExceptionHandlerProvider = function() {
    * @description
    * Sets the logging mode.
    *
-   * @param {string} mode Mode of operation, defaults to `rethrow`.
+   * @param {string} mode Mode of operation, defaults to 'rethrow'.
    *
-   *   - `rethrow`: If any errors are are passed into the handler in tests, it typically
+   *   - 'rethrow': If any errors are are passed into the handler in tests, it typically
    *                means that there is a bug in the application or test, so this mock will
    *                make these tests fail.
-   *   - `log`: Sometimes it is desirable to test that an error is throw, for this case the `log` mode stores an
-   *            array of errors in `$exceptionHandler.errors`, to allow later assertion of them.
+   *   - 'log': Sometimes it is desirable to test that an error is throw, for this case the 'log' mode stores an
+   *            array of errors in '$exceptionHandler.errors', to allow later assertion of them.
    *            See {@link ngMock.$log#assertEmpty assertEmpty()} and
    *             {@link ngMock.$log#reset reset()}
    */
@@ -288,8 +288,8 @@ angular.mock.$ExceptionHandlerProvider = function() {
  *
  * @description
  * Mock implementation of {@link ng.$log} that gathers all logged messages in arrays
- * (one array per logging level). These arrays are exposed as `logs` property of each of the
- * level-specific log function, e.g. for level `error` the array is exposed as `$log.error.logs`.
+ * (one array per logging level). These arrays are exposed as 'logs' property of each of the
+ * level-specific log function, e.g. for level 'error' the array is exposed as '$log.error.logs'.
  *
  */
 angular.mock.$LogProvider = function() {
@@ -428,7 +428,7 @@ angular.mock.$LogProvider = function() {
    * @name angular.mock.TzDate
    * @description
    *
-   * *NOTE*: this is not an injectable instance, just a globally available mock class of `Date`.
+   * *NOTE*: this is not an injectable instance, just a globally available mock class of 'Date'.
    *
    * Mock of the Date type which has its timezone specified via constroctor arg.
    *
@@ -667,7 +667,7 @@ angular.mock.dump = function(object) {
  * what we expect it to be.
  *
  * This mock implementation can be used to respond with static or dynamic responses via the
- * `expect` and `when` apis and their shortcuts (`expectGET`, `whenPOST`, etc).
+ * 'expect' and 'when' apis and their shortcuts ('expectGET', 'whenPOST', etc).
  *
  * When an Angular application needs some data from a server, it calls the $http service, which
  * sends the request to a real server using $httpBackend service. With dependency injection, it is
@@ -677,8 +677,8 @@ angular.mock.dump = function(object) {
  * There are two ways to specify what test data should be returned as http responses by the mock
  * backend when the code under test makes http requests:
  *
- * - `$httpBackend.expect` - specifies a request expectation
- * - `$httpBackend.when` - specifies a backend definition
+ * - '$httpBackend.expect' - specifies a request expectation
+ * - '$httpBackend.when' - specifies a backend definition
  *
  *
  * # Request Expectations vs Backend Definitions
@@ -743,7 +743,7 @@ angular.mock.dump = function(object) {
  * If we preserved this behavior in unit testing, we'd have to create async unit tests, which are
  * hard to write, follow and maintain. At the same time the testing mock, can't respond
  * synchronously because that would change the execution of the code under test. For this reason the
- * mock $httpBackend has a `flush()` method, which allows the test to explicitly flush pending
+ * mock $httpBackend has a 'flush()' method, which allows the test to explicitly flush pending
  * requests and thus preserving the async api of the backend, while allowing the test to execute
  * synchronously.
  *
@@ -830,7 +830,7 @@ angular.mock.$HttpBackendProvider = function() {
  *   - passing through is disabled
  *   - auto flushing is disabled
  *
- * Returns instance for e2e testing (when `$delegate` and `$browser` specified):
+ * Returns instance for e2e testing (when '$delegate' and '$browser' specified):
  *   - passing through (delegating request to real backend) is enabled
  *   - auto flushing is enabled
  *
@@ -923,10 +923,10 @@ function createHttpBackendMock($delegate, $browser) {
    * @param {(string|RegExp)=} data HTTP request body.
    * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
    *   object and returns true if the headers match the current definition.
-   * @returns {requestHandler} Returns an object with `respond` method that control how a matched
+   * @returns {requestHandler} Returns an object with 'respond' method that control how a matched
    *   request is handled.
    *
-   *  - respond – `{function([status,] data[, headers])|function(function(method, url, data, headers)}`
+   *  - respond – '{function([status,] data[, headers])|function(function(method, url, data, headers)}'
    *    – The respond method takes a set of static data to be returned or a function that can return
    *    an array containing response status (number), response data (string) and response headers
    *    (Object).
@@ -954,11 +954,11 @@ function createHttpBackendMock($delegate, $browser) {
    * @name ngMock.$httpBackend#whenGET
    * @methodOf ngMock.$httpBackend
    * @description
-   * Creates a new backend definition for GET requests. For more info see `when()`.
+   * Creates a new backend definition for GET requests. For more info see 'when()'.
    *
    * @param {string|RegExp} url HTTP url.
    * @param {(Object|function(Object))=} headers HTTP headers.
-   * @returns {requestHandler} Returns an object with `respond` method that control how a matched
+   * @returns {requestHandler} Returns an object with 'respond' method that control how a matched
    * request is handled.
    */
 
@@ -967,11 +967,11 @@ function createHttpBackendMock($delegate, $browser) {
    * @name ngMock.$httpBackend#whenHEAD
    * @methodOf ngMock.$httpBackend
    * @description
-   * Creates a new backend definition for HEAD requests. For more info see `when()`.
+   * Creates a new backend definition for HEAD requests. For more info see 'when()'.
    *
    * @param {string|RegExp} url HTTP url.
    * @param {(Object|function(Object))=} headers HTTP headers.
-   * @returns {requestHandler} Returns an object with `respond` method that control how a matched
+   * @returns {requestHandler} Returns an object with 'respond' method that control how a matched
    * request is handled.
    */
 
@@ -980,11 +980,11 @@ function createHttpBackendMock($delegate, $browser) {
    * @name ngMock.$httpBackend#whenDELETE
    * @methodOf ngMock.$httpBackend
    * @description
-   * Creates a new backend definition for DELETE requests. For more info see `when()`.
+   * Creates a new backend definition for DELETE requests. For more info see 'when()'.
    *
    * @param {string|RegExp} url HTTP url.
    * @param {(Object|function(Object))=} headers HTTP headers.
-   * @returns {requestHandler} Returns an object with `respond` method that control how a matched
+   * @returns {requestHandler} Returns an object with 'respond' method that control how a matched
    * request is handled.
    */
 
@@ -993,12 +993,12 @@ function createHttpBackendMock($delegate, $browser) {
    * @name ngMock.$httpBackend#whenPOST
    * @methodOf ngMock.$httpBackend
    * @description
-   * Creates a new backend definition for POST requests. For more info see `when()`.
+   * Creates a new backend definition for POST requests. For more info see 'when()'.
    *
    * @param {string|RegExp} url HTTP url.
    * @param {(string|RegExp)=} data HTTP request body.
    * @param {(Object|function(Object))=} headers HTTP headers.
-   * @returns {requestHandler} Returns an object with `respond` method that control how a matched
+   * @returns {requestHandler} Returns an object with 'respond' method that control how a matched
    * request is handled.
    */
 
@@ -1007,12 +1007,12 @@ function createHttpBackendMock($delegate, $browser) {
    * @name ngMock.$httpBackend#whenPUT
    * @methodOf ngMock.$httpBackend
    * @description
-   * Creates a new backend definition for PUT requests.  For more info see `when()`.
+   * Creates a new backend definition for PUT requests.  For more info see 'when()'.
    *
    * @param {string|RegExp} url HTTP url.
    * @param {(string|RegExp)=} data HTTP request body.
    * @param {(Object|function(Object))=} headers HTTP headers.
-   * @returns {requestHandler} Returns an object with `respond` method that control how a matched
+   * @returns {requestHandler} Returns an object with 'respond' method that control how a matched
    * request is handled.
    */
 
@@ -1021,10 +1021,10 @@ function createHttpBackendMock($delegate, $browser) {
    * @name ngMock.$httpBackend#whenJSONP
    * @methodOf ngMock.$httpBackend
    * @description
-   * Creates a new backend definition for JSONP requests. For more info see `when()`.
+   * Creates a new backend definition for JSONP requests. For more info see 'when()'.
    *
    * @param {string|RegExp} url HTTP url.
-   * @returns {requestHandler} Returns an object with `respond` method that control how a matched
+   * @returns {requestHandler} Returns an object with 'respond' method that control how a matched
    * request is handled.
    */
   createShortMethods('when');
@@ -1042,10 +1042,10 @@ function createHttpBackendMock($delegate, $browser) {
    * @param {(string|RegExp)=} data HTTP request body.
    * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
    *   object and returns true if the headers match the current expectation.
-   * @returns {requestHandler} Returns an object with `respond` method that control how a matched
+   * @returns {requestHandler} Returns an object with 'respond' method that control how a matched
    *  request is handled.
    *
-   *  - respond – `{function([status,] data[, headers])|function(function(method, url, data, headers)}`
+   *  - respond – '{function([status,] data[, headers])|function(function(method, url, data, headers)}'
    *    – The respond method takes a set of static data to be returned or a function that can return
    *    an array containing response status (number), response data (string) and response headers
    *    (Object).
@@ -1066,11 +1066,11 @@ function createHttpBackendMock($delegate, $browser) {
    * @name ngMock.$httpBackend#expectGET
    * @methodOf ngMock.$httpBackend
    * @description
-   * Creates a new request expectation for GET requests. For more info see `expect()`.
+   * Creates a new request expectation for GET requests. For more info see 'expect()'.
    *
    * @param {string|RegExp} url HTTP url.
    * @param {Object=} headers HTTP headers.
-   * @returns {requestHandler} Returns an object with `respond` method that control how a matched
+   * @returns {requestHandler} Returns an object with 'respond' method that control how a matched
    * request is handled. See #expect for more info.
    */
 
@@ -1079,11 +1079,11 @@ function createHttpBackendMock($delegate, $browser) {
    * @name ngMock.$httpBackend#expectHEAD
    * @methodOf ngMock.$httpBackend
    * @description
-   * Creates a new request expectation for HEAD requests. For more info see `expect()`.
+   * Creates a new request expectation for HEAD requests. For more info see 'expect()'.
    *
    * @param {string|RegExp} url HTTP url.
    * @param {Object=} headers HTTP headers.
-   * @returns {requestHandler} Returns an object with `respond` method that control how a matched
+   * @returns {requestHandler} Returns an object with 'respond' method that control how a matched
    *   request is handled.
    */
 
@@ -1092,11 +1092,11 @@ function createHttpBackendMock($delegate, $browser) {
    * @name ngMock.$httpBackend#expectDELETE
    * @methodOf ngMock.$httpBackend
    * @description
-   * Creates a new request expectation for DELETE requests. For more info see `expect()`.
+   * Creates a new request expectation for DELETE requests. For more info see 'expect()'.
    *
    * @param {string|RegExp} url HTTP url.
    * @param {Object=} headers HTTP headers.
-   * @returns {requestHandler} Returns an object with `respond` method that control how a matched
+   * @returns {requestHandler} Returns an object with 'respond' method that control how a matched
    *   request is handled.
    */
 
@@ -1105,12 +1105,12 @@ function createHttpBackendMock($delegate, $browser) {
    * @name ngMock.$httpBackend#expectPOST
    * @methodOf ngMock.$httpBackend
    * @description
-   * Creates a new request expectation for POST requests. For more info see `expect()`.
+   * Creates a new request expectation for POST requests. For more info see 'expect()'.
    *
    * @param {string|RegExp} url HTTP url.
    * @param {(string|RegExp)=} data HTTP request body.
    * @param {Object=} headers HTTP headers.
-   * @returns {requestHandler} Returns an object with `respond` method that control how a matched
+   * @returns {requestHandler} Returns an object with 'respond' method that control how a matched
    *   request is handled.
    */
 
@@ -1119,12 +1119,12 @@ function createHttpBackendMock($delegate, $browser) {
    * @name ngMock.$httpBackend#expectPUT
    * @methodOf ngMock.$httpBackend
    * @description
-   * Creates a new request expectation for PUT requests. For more info see `expect()`.
+   * Creates a new request expectation for PUT requests. For more info see 'expect()'.
    *
    * @param {string|RegExp} url HTTP url.
    * @param {(string|RegExp)=} data HTTP request body.
    * @param {Object=} headers HTTP headers.
-   * @returns {requestHandler} Returns an object with `respond` method that control how a matched
+   * @returns {requestHandler} Returns an object with 'respond' method that control how a matched
    *   request is handled.
    */
 
@@ -1133,12 +1133,12 @@ function createHttpBackendMock($delegate, $browser) {
    * @name ngMock.$httpBackend#expectPATCH
    * @methodOf ngMock.$httpBackend
    * @description
-   * Creates a new request expectation for PATCH requests. For more info see `expect()`.
+   * Creates a new request expectation for PATCH requests. For more info see 'expect()'.
    *
    * @param {string|RegExp} url HTTP url.
    * @param {(string|RegExp)=} data HTTP request body.
    * @param {Object=} headers HTTP headers.
-   * @returns {requestHandler} Returns an object with `respond` method that control how a matched
+   * @returns {requestHandler} Returns an object with 'respond' method that control how a matched
    *   request is handled.
    */
 
@@ -1147,10 +1147,10 @@ function createHttpBackendMock($delegate, $browser) {
    * @name ngMock.$httpBackend#expectJSONP
    * @methodOf ngMock.$httpBackend
    * @description
-   * Creates a new request expectation for JSONP requests. For more info see `expect()`.
+   * Creates a new request expectation for JSONP requests. For more info see 'expect()'.
    *
    * @param {string|RegExp} url HTTP url.
-   * @returns {requestHandler} Returns an object with `respond` method that control how a matched
+   * @returns {requestHandler} Returns an object with 'respond' method that control how a matched
    *   request is handled.
    */
   createShortMethods('expect');
@@ -1189,7 +1189,7 @@ function createHttpBackendMock($delegate, $browser) {
    * @name ngMock.$httpBackend#verifyNoOutstandingExpectation
    * @methodOf ngMock.$httpBackend
    * @description
-   * Verifies that all of the requests defined via the `expect` api were made. If any of the
+   * Verifies that all of the requests defined via the 'expect' api were made. If any of the
    * requests were not made, verifyNoOutstandingExpectation throws an exception.
    *
    * Typically, you would call this method following each test case that asserts requests using an
@@ -1378,7 +1378,7 @@ angular.mock.$RootElementProvider = function() {
  * @name ngMock
  * @description
  *
- * The `ngMock` is an angular module which is used with `ng` module and adds unit-test configuration as well as useful
+ * The 'ngMock' is an angular module which is used with 'ng' module and adds unit-test configuration as well as useful
  * mocks to the {@link AUTO.$injector $injector}.
  */
 angular.module('ngMock', ['ng']).provider({
@@ -1402,7 +1402,7 @@ angular.module('ngMock', ['ng']).provider({
  * @name ngMockE2E
  * @description
  *
- * The `ngMockE2E` is an angular module which contains mocks suitable for end-to-end testing.
+ * The 'ngMockE2E' is an angular module which contains mocks suitable for end-to-end testing.
  * Currently there is only one mock present in this module -
  * the {@link ngMockE2E.$httpBackend e2e $httpBackend} mock.
  */
@@ -1420,8 +1420,8 @@ angular.module('ngMockE2E', ['ng']).config(function($provide) {
  * *Note*: For fake http backend implementation suitable for unit testing please see
  * {@link ngMock.$httpBackend unit-testing $httpBackend mock}.
  *
- * This implementation can be used to respond with static or dynamic responses via the `when` api
- * and its shortcuts (`whenGET`, `whenPOST`, etc) and optionally pass through requests to the
+ * This implementation can be used to respond with static or dynamic responses via the 'when' api
+ * and its shortcuts ('whenGET', 'whenPOST', etc) and optionally pass through requests to the
  * real $httpBackend for specific requests (e.g. to interact with certain remote apis or to fetch
  * templates from a webserver).
  *
@@ -1429,14 +1429,14 @@ angular.module('ngMockE2E', ['ng']).config(function($provide) {
  * is being developed with the real backend api replaced with a mock, it is often desirable for
  * certain category of requests to bypass the mock and issue a real http request (e.g. to fetch
  * templates or static files from the webserver). To configure the backend with this behavior
- * use the `passThrough` request handler of `when` instead of `respond`.
+ * use the 'passThrough' request handler of 'when' instead of 'respond'.
  *
  * Additionally, we don't want to manually have to flush mocked out requests like we do during unit
  * testing. For this reason the e2e $httpBackend automatically flushes mocked out requests
  * automatically, closely simulating the behavior of the XMLHttpRequest object.
  *
  * To setup the application to run with this http backend, you have to create a module that depends
- * on the `ngMockE2E` and your application modules and defines the fake backend:
+ * on the 'ngMockE2E' and your application modules and defines the fake backend:
  *
  * <pre>
  *   myAppDev = angular.module('myAppDev', ['myApp', 'ngMockE2E']);
@@ -1470,14 +1470,14 @@ angular.module('ngMockE2E', ['ng']).config(function($provide) {
  * @param {(string|RegExp)=} data HTTP request body.
  * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
  *   object and returns true if the headers match the current definition.
- * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
+ * @returns {requestHandler} Returns an object with 'respond' and 'passThrough' methods that
  *   control how a matched request is handled.
  *
- *  - respond – `{function([status,] data[, headers])|function(function(method, url, data, headers)}`
+ *  - respond – '{function([status,] data[, headers])|function(function(method, url, data, headers)}'
  *    – The respond method takes a set of static data to be returned or a function that can return
  *    an array containing response status (number), response data (string) and response headers
  *    (Object).
- *  - passThrough – `{function()}` – Any request matching a backend definition with `passThrough`
+ *  - passThrough – '{function()}' – Any request matching a backend definition with 'passThrough'
  *    handler, will be pass through to the real backend (an XHR request will be made to the
  *    server.
  */
@@ -1487,11 +1487,11 @@ angular.module('ngMockE2E', ['ng']).config(function($provide) {
  * @name ngMockE2E.$httpBackend#whenGET
  * @methodOf ngMockE2E.$httpBackend
  * @description
- * Creates a new backend definition for GET requests. For more info see `when()`.
+ * Creates a new backend definition for GET requests. For more info see 'when()'.
  *
  * @param {string|RegExp} url HTTP url.
  * @param {(Object|function(Object))=} headers HTTP headers.
- * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
+ * @returns {requestHandler} Returns an object with 'respond' and 'passThrough' methods that
  *   control how a matched request is handled.
  */
 
@@ -1500,11 +1500,11 @@ angular.module('ngMockE2E', ['ng']).config(function($provide) {
  * @name ngMockE2E.$httpBackend#whenHEAD
  * @methodOf ngMockE2E.$httpBackend
  * @description
- * Creates a new backend definition for HEAD requests. For more info see `when()`.
+ * Creates a new backend definition for HEAD requests. For more info see 'when()'.
  *
  * @param {string|RegExp} url HTTP url.
  * @param {(Object|function(Object))=} headers HTTP headers.
- * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
+ * @returns {requestHandler} Returns an object with 'respond' and 'passThrough' methods that
  *   control how a matched request is handled.
  */
 
@@ -1513,11 +1513,11 @@ angular.module('ngMockE2E', ['ng']).config(function($provide) {
  * @name ngMockE2E.$httpBackend#whenDELETE
  * @methodOf ngMockE2E.$httpBackend
  * @description
- * Creates a new backend definition for DELETE requests. For more info see `when()`.
+ * Creates a new backend definition for DELETE requests. For more info see 'when()'.
  *
  * @param {string|RegExp} url HTTP url.
  * @param {(Object|function(Object))=} headers HTTP headers.
- * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
+ * @returns {requestHandler} Returns an object with 'respond' and 'passThrough' methods that
  *   control how a matched request is handled.
  */
 
@@ -1526,12 +1526,12 @@ angular.module('ngMockE2E', ['ng']).config(function($provide) {
  * @name ngMockE2E.$httpBackend#whenPOST
  * @methodOf ngMockE2E.$httpBackend
  * @description
- * Creates a new backend definition for POST requests. For more info see `when()`.
+ * Creates a new backend definition for POST requests. For more info see 'when()'.
  *
  * @param {string|RegExp} url HTTP url.
  * @param {(string|RegExp)=} data HTTP request body.
  * @param {(Object|function(Object))=} headers HTTP headers.
- * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
+ * @returns {requestHandler} Returns an object with 'respond' and 'passThrough' methods that
  *   control how a matched request is handled.
  */
 
@@ -1540,12 +1540,12 @@ angular.module('ngMockE2E', ['ng']).config(function($provide) {
  * @name ngMockE2E.$httpBackend#whenPUT
  * @methodOf ngMockE2E.$httpBackend
  * @description
- * Creates a new backend definition for PUT requests.  For more info see `when()`.
+ * Creates a new backend definition for PUT requests.  For more info see 'when()'.
  *
  * @param {string|RegExp} url HTTP url.
  * @param {(string|RegExp)=} data HTTP request body.
  * @param {(Object|function(Object))=} headers HTTP headers.
- * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
+ * @returns {requestHandler} Returns an object with 'respond' and 'passThrough' methods that
  *   control how a matched request is handled.
  */
 
@@ -1554,12 +1554,12 @@ angular.module('ngMockE2E', ['ng']).config(function($provide) {
  * @name ngMockE2E.$httpBackend#whenPATCH
  * @methodOf ngMockE2E.$httpBackend
  * @description
- * Creates a new backend definition for PATCH requests.  For more info see `when()`.
+ * Creates a new backend definition for PATCH requests.  For more info see 'when()'.
  *
  * @param {string|RegExp} url HTTP url.
  * @param {(string|RegExp)=} data HTTP request body.
  * @param {(Object|function(Object))=} headers HTTP headers.
- * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
+ * @returns {requestHandler} Returns an object with 'respond' and 'passThrough' methods that
  *   control how a matched request is handled.
  */
 
@@ -1568,10 +1568,10 @@ angular.module('ngMockE2E', ['ng']).config(function($provide) {
  * @name ngMockE2E.$httpBackend#whenJSONP
  * @methodOf ngMockE2E.$httpBackend
  * @description
- * Creates a new backend definition for JSONP requests. For more info see `when()`.
+ * Creates a new backend definition for JSONP requests. For more info see 'when()'.
  *
  * @param {string|RegExp} url HTTP url.
- * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
+ * @returns {requestHandler} Returns an object with 'respond' and 'passThrough' methods that
  *   control how a matched request is handled.
  */
 angular.mock.e2e = {};

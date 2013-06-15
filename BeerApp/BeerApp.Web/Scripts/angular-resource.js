@@ -24,21 +24,21 @@
  * The returned resource object has action methods which provide high-level behaviors without
  * the need to interact with the low level {@link ng.$http $http} service.
  *
- * @param {string} url A parameterized URL template with parameters prefixed by `:` as in
- *   `/user/:username`. If you are using a URL with a port number (e.g. 
- *   `http://example.com:8080/api`), you'll need to escape the colon character before the port
- *   number, like this: `$resource('http://example.com\\:8080/api')`.
+ * @param {string} url A parameterized URL template with parameters prefixed by ':' as in
+ *   '/user/:username'. If you are using a URL with a port number (e.g. 
+ *   'http://example.com:8080/api'), you'll need to escape the colon character before the port
+ *   number, like this: '$resource('http://example.com\\:8080/api')'.
  *
- * @param {Object=} paramDefaults Default values for `url` parameters. These can be overridden in
- *   `actions` methods.
+ * @param {Object=} paramDefaults Default values for 'url' parameters. These can be overridden in
+ *   'actions' methods.
  *
  *   Each key value in the parameter object is first bound to url template if present and then any
- *   excess keys are appended to the url search query after the `?`.
+ *   excess keys are appended to the url search query after the '?'.
  *
- *   Given a template `/path/:verb` and parameter `{verb:'greet', salutation:'Hello'}` results in
- *   URL `/path/greet?salutation=Hello`.
+ *   Given a template '/path/:verb' and parameter '{verb:'greet', salutation:'Hello'}' results in
+ *   URL '/path/greet?salutation=Hello'.
  *
- *   If the parameter value is prefixed with `@` then the value of that parameter is extracted from
+ *   If the parameter value is prefixed with '@' then the value of that parameter is extracted from
  *   the data object (useful for non-GET operations).
  *
  * @param {Object.<Object>=} actions Hash with declaration of custom action that should extend the
@@ -50,16 +50,16 @@
  *
  *   Where:
  *
- *   - `action` – {string} – The name of action. This name becomes the name of the method on your
+ *   - 'action' – {string} – The name of action. This name becomes the name of the method on your
  *     resource object.
- *   - `method` – {string} – HTTP request method. Valid methods are: `GET`, `POST`, `PUT`, `DELETE`,
- *     and `JSONP`
- *   - `params` – {object=} – Optional set of pre-bound parameters for this action.
+ *   - 'method' – {string} – HTTP request method. Valid methods are: 'GET', 'POST', 'PUT', 'DELETE',
+ *     and 'JSONP'
+ *   - 'params' – {object=} – Optional set of pre-bound parameters for this action.
  *   - isArray – {boolean=} – If true then the returned object for this action is an array, see
- *     `returns` section.
+ *     'returns' section.
  *
  * @returns {Object} A resource "class" object with methods for the default set of resource actions
- *   optionally extended with custom `actions`. The default set contains these actions:
+ *   optionally extended with custom 'actions'. The default set contains these actions:
  *
  *       { 'get':    {method:'GET'},
  *         'save':   {method:'POST'},
@@ -69,8 +69,8 @@
  *
  *   Calling these methods invoke an {@link ng.$http} with the specified http method,
  *   destination and parameters. When the data is returned from the server then the object is an
- *   instance of the resource class. The actions `save`, `remove` and `delete` are available on it
- *   as  methods with the `$` prefix. This allows you to easily perform CRUD operations (create,
+ *   instance of the resource class. The actions 'save', 'remove' and 'delete' are available on it
+ *   as  methods with the '$' prefix. This allows you to easily perform CRUD operations (create,
  *   read, update, delete) on server-side data like this:
  *   <pre>
         var User = $resource('/user/:userId', {userId:'@id'});
@@ -81,7 +81,7 @@
      </pre>
  *
  *   It is important to realize that invoking a $resource object method immediately returns an
- *   empty reference (object or array depending on `isArray`). Once the data is returned from the
+ *   empty reference (object or array depending on 'isArray'). Once the data is returned from the
  *   server the existing reference is populated with the actual data. This is a useful trick since
  *   usually the resource is assigned to a model which is then rendered by the view. Having an empty
  *   object results in no rendering, once the data arrives from the server then the object is
@@ -91,9 +91,9 @@
  *   The action methods on the class object or instance object can be invoked with the following
  *   parameters:
  *
- *   - HTTP GET "class" actions: `Resource.action([parameters], [success], [error])`
- *   - non-GET "class" actions: `Resource.action([parameters], postData, [success], [error])`
- *   - non-GET instance actions:  `instance.$action([parameters], [success], [error])`
+ *   - HTTP GET "class" actions: 'Resource.action([parameters], [success], [error])'
+ *   - non-GET "class" actions: 'Resource.action([parameters], postData, [success], [error])'
+ *   - non-GET instance actions:  'instance.$action([parameters], [success], [error])'
  *
  *
  * @example
@@ -138,9 +138,9 @@
  * The object returned from this function execution is a resource "class" which has "static" method
  * for each action in the definition.
  *
- * Calling these methods invoke `$http` on the `url` template with the given `method` and `params`.
+ * Calling these methods invoke '$http' on the 'url' template with the given 'method' and 'params'.
  * When the data is returned from the server then the object is an instance of the resource type and
- * all of the non-GET methods are available with `$` prefix. This allows you to easily support CRUD
+ * all of the non-GET methods are available with '$' prefix. This allows you to easily support CRUD
  * operations (create, read, update, delete) on server-side data.
 
    <pre>
@@ -151,7 +151,7 @@
      });
    </pre>
  *
- * It's worth noting that the success callback for `get`, `query` and other method gets passed
+ * It's worth noting that the success callback for 'get', 'query' and other method gets passed
  * in the response that came from the server as well as $http header getter function, so one
  * could rewrite the above example and get access to http headers as:
  *
@@ -168,7 +168,7 @@
 
  * # Buzz client
 
-   Let's look at what a buzz client created with the `$resource` service looks like:
+   Let's look at what a buzz client created with the '$resource' service looks like:
     <doc:example>
       <doc:source jsfiddle="false">
        <script>
