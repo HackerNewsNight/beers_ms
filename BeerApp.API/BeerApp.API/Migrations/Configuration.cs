@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Xml.Linq;
 using System.Data.Entity.Migrations;
 using BeerApp.Domain;
@@ -43,7 +44,10 @@ namespace BeerApp.API.Migrations
 
         protected override void Seed(BeerApp.Infrastructure.BeerDb context)
         {
-            var xmlDoc = XDocument.Load(@"d:\temp\beers_all.xml");
+            var resourceName = "BeerApp.API.Migrations.OpenDB.beers_all.xml";
+            var assembly = Assembly.GetExecutingAssembly();
+            var stream = assembly.GetManifestResourceStream(resourceName);
+            var xmlDoc = XDocument.Load(stream);
 
             var categories = xmlDoc.TableElements("categories")
                 .Select(x => new Category()
