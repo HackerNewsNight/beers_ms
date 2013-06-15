@@ -9,8 +9,8 @@
     <ProjectGuid>{BE1A9DC1-B9E8-4E2D-B0BA-34887E6F6889}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BeerApp.Web.API.Tests</RootNamespace>
-    <AssemblyName>BeerApp.Web.API.Tests</AssemblyName>
+    <RootNamespace>BeerApp.API.Tests</RootNamespace>
+    <AssemblyName>BeerApp.API.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\ValuesControllerTest.cs" />
+    <Compile Include="DB.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
