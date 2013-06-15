@@ -2,7 +2,7 @@
 using System.Linq;
 using BeerApp.Domain;
 
-namespace BeerApp.Web.Infrastructure
+namespace BeerApp.Infrastructure
 {
     public class BeerDb : DbContext, IBeerDataSource
     {

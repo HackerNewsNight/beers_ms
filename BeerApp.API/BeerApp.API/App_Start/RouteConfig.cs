@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace BeerApp.Web.API
+namespace BeerApp.API
 {
     public class RouteConfig
     {

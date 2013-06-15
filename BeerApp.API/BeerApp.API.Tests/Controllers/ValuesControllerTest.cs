@@ -5,10 +5,10 @@ using System.Net.Http;
 using System.Text;
 using System.Web.Http;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BeerApp.Web.API;
-using BeerApp.Web.API.Controllers;
+using BeerApp.API;
+using BeerApp.API.Controllers;
 
-namespace BeerApp.Web.API.Tests.Controllers
+namespace BeerApp.API.Tests.Controllers
 {
     [TestClass]
     public class ValuesControllerTest

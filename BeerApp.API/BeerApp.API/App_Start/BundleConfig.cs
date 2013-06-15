@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace BeerApp.Web.API
+namespace BeerApp.API.App_Start
 {
     public class BundleConfig
     {
